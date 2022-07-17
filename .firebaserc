@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ingresos-y-egresos-51f9a": {
+      "hosting": {
+        "ingresosApp": [
+          "ingresos-y-egresos-51f9a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ingresos-y-egresos-51f9a"
+  }
+}
