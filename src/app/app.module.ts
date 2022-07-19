@@ -19,6 +19,11 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
+//NgRx
+import { StoreModule } from '@ngrx/store';
+import { AppReducer } from './app.reduce';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +38,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot(AppReducer),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
