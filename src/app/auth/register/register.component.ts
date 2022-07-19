@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/models/user.model';
+import { UserAuth } from 'src/app/core/models/user.model';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { UtilsService } from 'src/app/core/services/Utils/utills.service';
 import Swal from 'sweetalert2';
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
   createUser(): void{
     if (this.userForm.invalid) { return; }
     this._utils.showLoading();
-    const user: User = {
+    const user: UserAuth = {
       ...this.userForm.value
     };
     this._authService.createUser(user)
