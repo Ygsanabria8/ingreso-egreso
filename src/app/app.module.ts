@@ -24,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppReducer } from './app.reduce';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EntryEgressComponent } from './entry-egress/entry-egress.component';
+import { OrderItemsPipe } from './core/pipes/orderItems/order-items.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EntryEgressComponent } from './entry-egress/entry-egress.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    EntryEgressComponent
+    EntryEgressComponent,
+    OrderItemsPipe
   ],
   imports: [
     BrowserModule,

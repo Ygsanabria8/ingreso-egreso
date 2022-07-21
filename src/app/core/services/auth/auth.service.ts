@@ -7,7 +7,8 @@ import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AppState } from 'src/app/app.reduce';
 import { User, UserAuth } from '../../models/user.model';
-import * as auth from '../../store/actions/auth.actions';
+import * as authAtions from '../../store/actions/auth.actions';
+import * as entryEgressActions from '../../store/actions/entry-egress.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -38,12 +39,13 @@ export class AuthService {
               name: firestoreUser.name
             };
             this.user = tempUser;
-            this._store.dispatch(auth.setUser({user: tempUser}));
+            this._store.dispatch(authAtions.setUser({user: tempUser}));
           });
       } else {
         this.user = undefined;
         this.userSubscription.unsubscribe();
-        this._store.dispatch(auth.unsetUser());
+        this._store.dispatch(authAtions.unsetUser());
+        this._store.dispatch(entryEgressActions.unsetItems());
       }
     });
   }

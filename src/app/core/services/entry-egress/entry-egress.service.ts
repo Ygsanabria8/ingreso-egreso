@@ -30,4 +30,9 @@ export class EntryEgressService {
         })))
       );
   }
+
+  deleteEntryEgress(itemId: string): any{
+    return this._fiestore.doc(`${this._authService.User?.uid}/entry-egress/items/${itemId}`)
+      .delete();
+  }
 }
