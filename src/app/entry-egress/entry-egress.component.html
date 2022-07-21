@@ -18,10 +18,10 @@
           <div class="form-group">
             <label>Tipo</label>
             <br/>
-            <button *ngIf="type === 'egress'" (click)="type = 'entry'"  type="button" class="btn btn-primary btn-block">
+            <button *ngIf="type === 'entry'" (click)="type = 'egress'"  type="button" class="btn btn-primary btn-block">
               Ingreso
             </button>
-            <button *ngIf="type === 'entry'" (click)="type = 'egress'" type="button" class="btn btn-warning btn-block">
+            <button *ngIf="type === 'egress'" (click)="type = 'entry'" type="button" class="btn btn-warning btn-block">
               Egreso
             </button>
           </div>
