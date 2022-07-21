@@ -26,6 +26,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EntryEgressComponent } from './entry-egress/entry-egress.component';
 import { OrderItemsPipe } from './core/pipes/orderItems/order-items.pipe';
 
+//Librerias
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +52,7 @@ import { OrderItemsPipe } from './core/pipes/orderItems/order-items.pipe';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
