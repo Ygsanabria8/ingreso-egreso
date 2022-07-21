@@ -23,6 +23,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { StoreModule } from '@ngrx/store';
 import { AppReducer } from './app.reduce';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EntryEgressComponent } from './entry-egress/entry-egress.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StatisticsComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    EntryEgressComponent
   ],
   imports: [
     BrowserModule,
