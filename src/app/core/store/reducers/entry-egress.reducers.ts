@@ -1,9 +1,14 @@
 import { createReducer, on } from "@ngrx/store";
+import { AppState } from "src/app/app.reduce";
 import { EntryEgrees } from "../../models/entry-egress.model";
 import * as entryEgress from "../actions/entry-egress.actions";
 
 export interface State {
     items: EntryEgrees[];
+}
+
+export interface AppStateWithItems extends AppState{
+    items: State
 }
 
 export const initialState: State = {

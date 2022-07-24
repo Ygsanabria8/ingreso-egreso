@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { AppState } from 'src/app/app.reduce';
 import { EntryEgrees } from 'src/app/core/models/entry-egress.model';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { AppStateWithItems } from 'src/app/core/store/reducers/entry-egress.reducers';
 
 @Component({
   selector: 'app-statistics',
@@ -25,7 +25,7 @@ export class StatisticsComponent implements OnInit {
   };
 
   constructor(
-    private _store: Store<AppState>,
+    private _store: Store<AppStateWithItems>,
   ) { }
 
   ngOnInit(): void {

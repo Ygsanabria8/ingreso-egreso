@@ -1,10 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { filter, Subscription } from 'rxjs';
-import { AppState } from '../app.reduce';
-import { EntryEgrees } from '../core/models/entry-egress.model';
-import { EntryEgressService } from '../core/services/entry-egress/entry-egress.service';
-import * as EntryEgressActions from '../core/store/actions/entry-egress.actions';
+import { AppState } from 'src/app/app.reduce';
+import { EntryEgrees } from 'src/app/core/models/entry-egress.model';
+import { EntryEgressService } from 'src/app/core/services/entry-egress/entry-egress.service';
+import * as EntryEgressActions from '../../core/store/actions/entry-egress.actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,8 +26,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
-    this.entryEgressSubscription.unsubscribe();
+    this.userSubscription?.unsubscribe();
+    this.entryEgressSubscription?.unsubscribe();
   }
 
   setUserSubscription(): void {
