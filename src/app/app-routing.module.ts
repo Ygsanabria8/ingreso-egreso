@@ -3,16 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AuthGuard } from './core/guards/auth/auth.guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { dashboardRoutes } from './dashboard/dashboard.routes';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DashboardComponent,
-    children: dashboardRoutes,
-    canActivate: [AuthGuard],
-  },
   {
     path: 'login',
     component: LoginComponent,
@@ -20,6 +12,11 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: '',
+    canLoad:[ AuthGuard ],
+    loadChildren: () => import('./entry-egress/entry-egress.module').then(m => m.EntryEgressModule)
   },
   {
     path: '**',

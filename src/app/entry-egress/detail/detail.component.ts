@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { AppState } from 'src/app/app.reduce';
 import { EntryEgrees } from 'src/app/core/models/entry-egress.model';
 import { EntryEgressService } from 'src/app/core/services/entry-egress/entry-egress.service';
+import { AppStateWithItems } from 'src/app/core/store/reducers/entry-egress.reducers';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,7 +17,7 @@ export class DetailComponent implements OnInit, OnDestroy {
   items!: EntryEgrees[];
 
   constructor(
-    private _store: Store<AppState>,
+    private _store: Store<AppStateWithItems>,
     private _entryEgressServie: EntryEgressService,
   ) { }
 
